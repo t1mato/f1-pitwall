@@ -1,0 +1,20 @@
+# F1 Telemetry Visualizer — Python Dependencies
+# Install with:  pip install -r requirements.txt
+
+# ── Core UI ──────────────────────────────────────────────────────────────────
+PySide6>=6.6.0          # Qt6 bindings: MainWindow, QThread, Signal/Slot
+pyqtgraph>=0.13.7       # OpenGL-backed real-time plots (replaces Matplotlib)
+
+# ── F1 Data API ───────────────────────────────────────────────────────────────
+fastf1>=3.3.9            # Official F1 telemetry library (Ergast + Timing API)
+
+# ── Numerical Computing ───────────────────────────────────────────────────────
+numpy>=1.24.0            # ndarray — the universal telemetry array type
+pandas>=2.0.0            # FastF1 returns DataFrames; we clean/index them here
+scipy>=1.11.0            # Python fallback signal processing (if C++ unavailable)
+
+# ── C++ Build Tooling ─────────────────────────────────────────────────────────
+pybind11>=2.11.1         # C++/Python interop — generates the f1_processor.so
+
+# ── Utilities ─────────────────────────────────────────────────────────────────
+requests>=2.31.0         # HTTP — FastF1 uses this for session downloads
