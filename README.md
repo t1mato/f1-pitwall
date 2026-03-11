@@ -78,3 +78,25 @@ include/     — C++ headers
 ```
 
 The update loop runs at 20 FPS. Car position interpolation uses binary search (`std::lower_bound`) + linear interpolation in C++. Position DataFrames are converted to NumPy float64 arrays once at load time to eliminate per-frame pandas overhead.
+
+---
+
+## Future Goals
+
+- **Lap comparison** — overlay telemetry traces (speed, throttle, brake) for two drivers on the same chart to identify where time is gained or lost
+- **Sector highlighting** — colour-code track sectors green/yellow/purple based on each driver's sector times
+- **Gap display** — show real-time intervals between drivers on the leaderboard (e.g. +1.4s behind leader)
+- **Variable replay speed** — 0.5×, 1×, 2×, 4× playback controls
+- **Session picker UI** — in-app selector for year, round, and session type instead of editing `main.py`
+- **Live timing** — connect to the FastF1 live client for real-time race session data
+
+---
+
+## License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) — free to use, modify, and distribute with attribution.
+
+## Disclaimer
+
+This project is unofficial and not affiliated with, endorsed by, or connected to Formula 1, the FIA, or any F1 team. All telemetry data is sourced from the [FastF1](https://github.com/theOehrly/Fast-F1) library, which accesses publicly available timing data. F1, Formula One, and related marks are trademarks of Formula One Licensing BV.
+
